@@ -3,9 +3,8 @@ import Banner from "./componentes/Banner";
 import Footer from "./componentes/Footer";
 import Cards from "./componentes/Cards";
 
+
 function App() {
-
-
   return (
     <div>
       <Banner/>
