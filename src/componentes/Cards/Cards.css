@@ -1,0 +1,12 @@
+.monitoramento {
+    display: flex;
+    justify-content: center;
+}
+
+.card {
+    background-color: #c4c4c4;
+    width: 600px;
+    height: 180px;
+    margin: 20px;
+    padding: 20px;
+}

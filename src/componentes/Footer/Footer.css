@@ -1,0 +1,13 @@
+.footer {
+    background-color: #5897CD;
+    color: #fff;
+    padding: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.footer ul li {
+    display: inline-block;
+    margin-left: 32px;
+}
