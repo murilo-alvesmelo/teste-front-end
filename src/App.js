@@ -4,7 +4,7 @@ import Footer from "./componentes/Footer";
 import Cards from "./componentes/Cards";
 import axios from "axios";
 
-function App() {
+function App(props) {
   const[vinculos, setVinculos] = useState([])
 
 
@@ -22,7 +22,6 @@ function App() {
     getVinculos()
   },[])
 
-  
   return (
     <div>
       <Banner/>
