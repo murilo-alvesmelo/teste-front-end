@@ -1,4 +1,5 @@
 .card {
+    background-image: url('../../assets/fundo.jpg');
     display: flex;
     justify-content: center;
 }

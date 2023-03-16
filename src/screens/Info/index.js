@@ -50,8 +50,8 @@ export default function Info(){
     return(
         <>
             <Banner/>
-            <div className='info'>
-                <section>
+            <section className='info'>
+                <div className='info-box'>
                     <h2>Propriedade</h2>
                         <p>
                             <strong>Nome da propriedade:</strong> {propriedade.nomePropriedade}
@@ -62,9 +62,9 @@ export default function Info(){
                     <h2>Produtor</h2>
                     <h2>Monitoramento</h2>
                     <h2>Vinculo</h2>
-                </section>
-            </div>
+                </div>
             <button onClick={handleClick}>Voltar</button>
+            </section>
             <Footer/>
         </>
     )
