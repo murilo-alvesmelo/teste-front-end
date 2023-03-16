@@ -2,9 +2,10 @@ import './Info.css'
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import moment from 'moment';
 import Banner from "../../componentes/Banner";
 import Footer from "../../componentes/Footer";
-
+import Button from '../../componentes/Button';
 
 export default function Info(){
     const navigate = useNavigate()
@@ -46,7 +47,9 @@ export default function Info(){
     const handleClick = () =>{
         navigate('/')
     }
-
+    const comprar = () => {
+        alert(`Comprou a fazenda`)
+    }
     return(
         <>
             <Banner/>
@@ -54,16 +57,46 @@ export default function Info(){
                 <div className='info-box'>
                     <h2>Propriedade</h2>
                         <p>
-                            <strong>Nome da propriedade:</strong> {propriedade.nomePropriedade}
+                            <strong>Nome da propriedade: </strong> {propriedade.nomePropriedade}
                         </p>
                         <p>
-                            <strong>Nome da propriedade:</strong> {propriedade.numeroCadastroRural}
+                            <strong>Cadastro Rural: </strong> {propriedade.numeroCadastroRural}
                         </p>
                     <h2>Produtor</h2>
+                        <p>
+                            <strong>Nome: </strong> {produtor.nomeProdutor}
+                        </p>
+                        <p>
+                            <strong>CPF: </strong> {produtor.cpfProdutor}
+                        </p>
+                        <p>
+                            <strong>Cod. Identificação: </strong> {produtor.idprodutor}
+                        </p>
                     <h2>Monitoramento</h2>
+                        <p>
+                            <strong>Data do monitoramento: </strong> {monitoramento.dataMonitoramento ? 
+                            moment(monitoramento.dataMonitoramento).format('DD/MM/YYYY') : 
+                            'Sem monitoramento'}
+                        </p>
+                        <p>
+                            <strong>Analista:</strong> {monitoramento.analista}
+                        </p>
+                        <p>
+                            <strong>Parecer de Analise:</strong> {monitoramento.parecerAnalise}
+                        </p>
+                        <p>
+                            <strong>Resultado:</strong> {monitoramento.resultado}
+                        </p>
                     <h2>Vinculo</h2>
+                        <p>
+                            <strong>Vinculo: </strong> {vinculo.tipoVinculoProdutor !== 'null' ? vinculo.tipoVinculoProdutor : 'Sem vinculo'}
+                        </p>
                 </div>
-            <button onClick={handleClick}>Voltar</button>
+                <div>
+                    <Button texto='Voltar' onClick={handleClick}/>
+                    <Button texto='Comprar' onClick={comprar} disabled={monitoramento.resultado === 'Liberado' ? false : true}
+                    />
+                </div>
             </section>
             <Footer/>
         </>

@@ -1,5 +1,9 @@
 /* #43ad4b; */
 .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-image: url('../../assets/fundo.jpg');
     padding: 30px;
 }
@@ -9,6 +13,7 @@
     padding: 20px;
     border-radius: 20px 0px 20px;
     box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.2);
+    border-left: 8px solid #43ad4b;
 }
 
 .info h2{
@@ -16,6 +21,6 @@
     padding: 5px;
 }
 
-.info p{
+.info p {
     text-indent: 30px;
 }
