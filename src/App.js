@@ -4,7 +4,7 @@ import Footer from "./componentes/Footer";
 import Cards from "./componentes/Cards";
 import axios from "axios";
 
-function App(props) {
+function App() {
   const[vinculos, setVinculos] = useState([])
 
 

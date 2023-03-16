@@ -1,12 +1,12 @@
 import './Cards.css'
 import { useEffect, useState } from 'react'
-import { Link, Navigate, redirect } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
 import moment from 'moment/moment'
 import aberto from '../../assets/aberto.png'
 
 export default function Cards(props){
-
+    
     const[produtor, setProdutores] = useState([])
     const[propriedade, setPropriedades] = useState([])
     const[monitoramento, setMonitoramentos] = useState([])
@@ -24,7 +24,7 @@ export default function Cards(props){
     }
 
     const getMonitoramentos = () =>{
-        axios.get(`http://localhost:3001/monitoramentos/${props.idVinculo - 1}`)
+        axios.get(`http://localhost:3001/monitoramentos/${props.idProdutor - 1}`)
             .then(res => setMonitoramentos(res.data))
             .catch(err => console.log(err))
     }
@@ -34,12 +34,9 @@ export default function Cards(props){
         getMonitoramentos()
     },[])
 
-    const handleClick = (props) =>{
-        console.log(props)
-    }
     return(
-        <div className='monitoramento'>
-            <div className='card'>
+        <div className='card'>
+            <div className='box'>
                 <div className='box-propriedade'>
                     <h3>Nome da Propriedade</h3>
                     <p>
@@ -79,7 +76,7 @@ export default function Cards(props){
                         </p>
                     </div>
                 </div>
-            <Link className='icon-abrir' to='/info'><img src={aberto} alt='Visualizar'/></Link>
+            <Link className='icon-abrir' to={`/info/${props.idProdutor}`}><img src={aberto} alt='Visualizar'/></Link>
             </div>
         </div>
     )
