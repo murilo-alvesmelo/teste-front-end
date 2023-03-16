@@ -1,5 +1,9 @@
 .banner {
-    background-color: #5897CD;
+    background-image: radial-gradient(
+      ellipse closest-corner at 3% 50%,
+      #43ad4b 99%,
+      #144369
+    );
 }
 
 .banner img {

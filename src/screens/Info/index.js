@@ -48,7 +48,8 @@ export default function Info(){
         navigate('/')
     }
     const comprar = () => {
-        alert(`Comprou a fazenda`)
+        localStorage.setItem("Sinais")
+        console.log(propriedade)
     }
     return(
         <>
