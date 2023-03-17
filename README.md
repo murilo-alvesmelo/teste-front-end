@@ -36,7 +36,7 @@ https://teste-front-end-flame.vercel.app/
 
 ## Figma do projeto
 
-https://www.figma.com/file/dxg9BFTl8SpeLl63z0usNh/Untitled?node-id=0%3A1&t=DclcAAeqgMTY2zl7-1
+https://www.figma.com/file/dxg9BFTl8SpeLl63z0usNh/teste-front-end?node-id=0%3A1&t=SXyU9Dt3FkLCg6Yx-1
 
 ## Dependências utilizadas
 
