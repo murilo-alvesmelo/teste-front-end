@@ -13,7 +13,6 @@ export default function Info(){
     const[monitoramento, setMonitoramento] = useState([])
     const[vinculo, setVinculo] = useState([])
     const[propriedade, setPropriedade] = useState([])
-    const[contSinais, setContSinais] = useState(1)
 
     const getProdutor = () => {
         axios.get(`https://throbbing-shape-4393.fly.dev/produtores/${id - 1}`)
@@ -57,10 +56,16 @@ export default function Info(){
                 <div className='info-box'>
                     <h2>Propriedade</h2>
                         <p>
+                            <strong>ID da propriedade: </strong> {propriedade.idPropriedade !== null ? propriedade.idPropriedade : 'Sem Identificação'}
+                        </p>
+                        <p>
                             <strong>Nome da propriedade: </strong> {propriedade.nomePropriedade}
                         </p>
                         <p>
                             <strong>Cadastro Rural: </strong> {propriedade.numeroCadastroRural}
+                        </p>
+                        <p>
+                            <strong>Tipo da propiedade: </strong> {propriedade.tipoPropriedade !== 'null' ? propriedade.tipoPropriedade : "Não identificado"}
                         </p>
                     <h2>Produtor</h2>
                         <p>
@@ -70,7 +75,7 @@ export default function Info(){
                             <strong>CPF: </strong> {produtor.cpfProdutor}
                         </p>
                         <p>
-                            <strong>Cod. Identificação: </strong> {produtor.idprodutor}
+                            <strong>ID do Produtor: </strong> {produtor.idprodutor}
                         </p>
                     <h2>Monitoramento</h2>
                         <p>
