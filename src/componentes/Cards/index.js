@@ -4,13 +4,15 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import moment from 'moment/moment'
 import aberto from '../../assets/aberto.png'
+import etiqueta from '../../assets/etiqueta.png'
 
 export default function Cards(props){
     
     const[produtor, setProdutores] = useState([])
     const[propriedade, setPropriedades] = useState([])
     const[monitoramento, setMonitoramentos] = useState([])
-    
+    const[sinal, setSinal] = useState([])
+
     const getProdutores = () =>{
       axios.get(`http://localhost:3001/produtores/${props.idProdutor - 1}`)
       .then(res => setProdutores(res.data))
@@ -28,15 +30,35 @@ export default function Cards(props){
             .then(res => setMonitoramentos(res.data))
             .catch(err => console.log(err))
     }
+
+    const getSinal = () => {
+        if(localStorage.length === 0 ){
+            setSinal(null)
+        }else{
+            const { idPropriedade } = JSON.parse(localStorage.getItem('sinais_vendas'))
+            setSinal(idPropriedade)
+        }
+    }
+
     useEffect(() => {
         getProdutores()
         getPropriedades()
         getMonitoramentos()
+        getSinal()
+
     },[])
+
 
     return(
         <div className='card'>
             <div className='box'>
+            {
+                sinal === propriedade.idPropriedade ? 
+                <div className='icon-etiqueta'>
+                    <img src={etiqueta} alt='Etiqueta'/>
+                </div>
+                : ""
+            }
                 <div className='box-propriedade'>
                     <h3>Nome da Propriedade</h3>
                     <p>

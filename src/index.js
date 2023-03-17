@@ -8,12 +8,14 @@ import './index.css';
 import App from './App';
 import ErrorPage from './screens/Error';
 import Info from './screens/Info';
+import Banner from './componentes/Banner';
+import Footer from './componentes/Footer';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App/>,
-    errorElement: <ErrorPage/>
+    errorElement: <ErrorPage/>,
   },
   {
     path: '/info/:id',
@@ -24,6 +26,8 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Banner/>
+      <RouterProvider router={router}/>
+    <Footer/>
   </React.StrictMode>
 );

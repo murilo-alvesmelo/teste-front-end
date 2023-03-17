@@ -3,8 +3,6 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import moment from 'moment';
-import Banner from "../../componentes/Banner";
-import Footer from "../../componentes/Footer";
 import Button from '../../componentes/Button';
 
 export default function Info(){
@@ -15,6 +13,7 @@ export default function Info(){
     const[monitoramento, setMonitoramento] = useState([])
     const[vinculo, setVinculo] = useState([])
     const[propriedade, setPropriedade] = useState([])
+    const[contSinais, setContSinais] = useState(1)
 
     const getProdutor = () => {
         axios.get(`http://localhost:3001/produtores/${id - 1}`)
@@ -48,12 +47,14 @@ export default function Info(){
         navigate('/')
     }
     const comprar = () => {
-        localStorage.setItem("Sinais")
-        console.log(propriedade)
+        /* alert("Confirmar compra?") */
+        setContSinais(contSinais + 1)
+        localStorage.setItem('sinais_vendas', JSON.stringify(propriedade))
+        localStorage.setItem('count_sinais', contSinais)
+        navigate('/')
     }
     return(
         <>
-            <Banner/>
             <section className='info'>
                 <div className='info-box'>
                     <h2>Propriedade</h2>
@@ -99,7 +100,6 @@ export default function Info(){
                     />
                 </div>
             </section>
-            <Footer/>
         </>
     )
 }

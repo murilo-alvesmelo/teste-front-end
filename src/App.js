@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import Banner from "./componentes/Banner";
-import Footer from "./componentes/Footer";
 import Cards from "./componentes/Cards";
 import axios from "axios";
 
@@ -24,12 +22,10 @@ function App() {
 
   return (
     <div>
-      <Banner/>
       {vinculos.map((vinculo, i) => (
         <Cards key={i} {...vinculo}/>
       )
       )}
-      <Footer/>
     </div>
   );
 }
