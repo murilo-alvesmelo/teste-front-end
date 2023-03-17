@@ -10,3 +10,26 @@
     margin: 20px;
     height: 80px;
 }
+
+@media all and (max-width: 450px){
+  .banner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    background-image: radial-gradient(
+      ellipse closest-corner at 0% 100%,
+      #43ad4b 99%,
+      #144369
+    );
+  }
+
+.banner img {
+    margin: 0px;
+    height: 80px;
+  }
+
+.img-planeta {
+  width: 80px;
+}
+}

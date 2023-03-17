@@ -47,10 +47,8 @@ export default function Info(){
         navigate('/')
     }
     const comprar = () => {
-        /* alert("Confirmar compra?") */
-        setContSinais(contSinais + 1)
+        alert("Confirmar compra?")
         localStorage.setItem('sinais_vendas', JSON.stringify(propriedade))
-        localStorage.setItem('count_sinais', contSinais)
         navigate('/')
     }
     return(
@@ -94,7 +92,7 @@ export default function Info(){
                             <strong>Vinculo: </strong> {vinculo.tipoVinculoProdutor !== 'null' ? vinculo.tipoVinculoProdutor : 'Sem vinculo'}
                         </p>
                 </div>
-                <div>
+                <div className='botoes'>
                     <Button texto='Voltar' onClick={handleClick}/>
                     <Button texto='Comprar' onClick={comprar} disabled={monitoramento.resultado === 'Liberado' ? false : true}
                     />
