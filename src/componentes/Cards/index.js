@@ -14,19 +14,19 @@ export default function Cards(props){
     const[sinal, setSinal] = useState([])
 
     const getProdutores = () =>{
-      axios.get(`http://localhost:3001/produtores/${props.idProdutor - 1}`)
+      axios.get(`https://throbbing-shape-4393.fly.dev/produtores/${props.idProdutor - 1}`)
       .then(res => setProdutores(res.data))
       .catch(err => console.log(err))
     }
     
     const getPropriedades = () =>{
-        axios.get(`http://localhost:3001/propriedades/${props.idProdutor - 1}`)
+        axios.get(`https://throbbing-shape-4393.fly.dev/propriedades/${props.idProdutor - 1}`)
             .then(res => setPropriedades(res.data))
             .catch(err => console.log(err))
     }
 
     const getMonitoramentos = () =>{
-        axios.get(`http://localhost:3001/monitoramentos/${props.idProdutor - 1}`)
+        axios.get(`https://throbbing-shape-4393.fly.dev/monitoramentos/${props.idProdutor - 1}`)
             .then(res => setMonitoramentos(res.data))
             .catch(err => console.log(err))
     }

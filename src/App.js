@@ -7,7 +7,7 @@ function App() {
 
 
   const getVinculos = () =>{
-    axios.get('http://localhost:3001/vinculo')
+    axios.get('https://throbbing-shape-4393.fly.dev/vinculo')
     .then(res => {
       setVinculos(Object.keys(res.data).map(function(key){
         return res.data[key]

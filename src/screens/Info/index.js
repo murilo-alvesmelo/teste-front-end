@@ -16,22 +16,22 @@ export default function Info(){
     const[contSinais, setContSinais] = useState(1)
 
     const getProdutor = () => {
-        axios.get(`http://localhost:3001/produtores/${id - 1}`)
+        axios.get(`https://throbbing-shape-4393.fly.dev/produtores/${id - 1}`)
             .then(res => setProdutor(res.data))
             .catch(err => console.log(err))
     }
     const getMonitoramento = () => {
-        axios.get(`http://localhost:3001/monitoramentos/${id - 1}`)
+        axios.get(`https://throbbing-shape-4393.fly.dev/monitoramentos/${id - 1}`)
             .then(res => setMonitoramento(res.data))
             .catch(err => console.log(err))
     }
     const getVinculo = () => {
-        axios.get(`http://localhost:3001/propriedades/${id - 1}`)
+        axios.get(`https://throbbing-shape-4393.fly.dev/propriedades/${id - 1}`)
             .then(res => setPropriedade(res.data))
             .catch(err => console.log(err))
     }
     const getPropriedade = () => {
-        axios.get(`http://localhost:3001/vinculo/${id - 1}`)
+        axios.get(`https://throbbing-shape-4393.fly.dev/vinculo/${id - 1}`)
             .then(res => setVinculo(res.data))
             .catch(err => console.log(err))
     }
