@@ -53,8 +53,8 @@ export default function Info(){
     return(
         <>
             <section className='info'>
-                <div className='info-box'>
-                    <h2>Propriedade</h2>
+                <div className='info-box' style={monitoramento.resultado  === 'Bloqueado' ?  {borderLeftColor: 'red'}: {borderLeftColor: '#43ad4b'}}>
+                    <h2 style={monitoramento.resultado  === 'Bloqueado' ?  {borderLeftColor: 'red'}: {borderLeftColor: '#43ad4b'}}>Propriedade</h2>
                         <p>
                             <strong>ID da propriedade: </strong> {propriedade.idPropriedade !== null ? propriedade.idPropriedade : 'Sem Identificação'}
                         </p>
@@ -67,7 +67,7 @@ export default function Info(){
                         <p>
                             <strong>Tipo da propiedade: </strong> {propriedade.tipoPropriedade !== 'null' ? propriedade.tipoPropriedade : "Não identificado"}
                         </p>
-                    <h2>Produtor</h2>
+                    <h2 style={monitoramento.resultado  === 'Bloqueado' ?  {borderLeftColor: 'red'}: {borderLeftColor: '#43ad4b'}}>Produtor</h2>
                         <p>
                             <strong>Nome: </strong> {produtor.nomeProdutor}
                         </p>
@@ -77,7 +77,7 @@ export default function Info(){
                         <p>
                             <strong>ID do Produtor: </strong> {produtor.idprodutor}
                         </p>
-                    <h2>Monitoramento</h2>
+                    <h2 style={monitoramento.resultado  === 'Bloqueado' ?  {borderLeftColor: 'red'}: {borderLeftColor: '#43ad4b'}}>Monitoramento</h2>
                         <p>
                             <strong>Data do monitoramento: </strong> {monitoramento.dataMonitoramento ? 
                             moment(monitoramento.dataMonitoramento).format('DD/MM/YYYY') : 
@@ -92,7 +92,7 @@ export default function Info(){
                         <p>
                             <strong>Resultado:</strong> {monitoramento.resultado}
                         </p>
-                    <h2>Vinculo</h2>
+                    <h2 style={monitoramento.resultado  === 'Bloqueado' ?  {borderLeftColor: 'red'}: {borderLeftColor: '#43ad4b'}}>Vinculo</h2>
                         <p>
                             <strong>Vinculo: </strong> {vinculo.tipoVinculoProdutor !== 'null' ? vinculo.tipoVinculoProdutor : 'Sem vinculo'}
                         </p>

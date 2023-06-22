@@ -51,7 +51,7 @@ export default function Cards(props){
 
     return(
         <div className='card'>
-            <div className='box'>
+            <div className='box' style={monitoramento.resultado  === 'Bloqueado' ?  {borderLeftColor: 'red'}: {borderLeftColor: '#43ad4b'}}>
             {
                 sinal === propriedade.idPropriedade ? 
                 <div className='icon-etiqueta'>

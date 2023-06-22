@@ -39,7 +39,7 @@
     width: 90%;
     border-radius: 20px 0px 20px;
     box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.2);
-    border-left: 8px solid #43ad4b;
+    border-left: 8px solid;
 }
 
 .info h2{

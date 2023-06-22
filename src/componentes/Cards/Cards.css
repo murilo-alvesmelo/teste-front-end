@@ -11,7 +11,11 @@
     margin: 20px;
     box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.2);
     border-radius: 20px 0px 20px;
-    border-left: 8px solid #43ad4b;
+    border-left: 8px solid;
+}
+
+.box:hover {
+    scale: 1.03;
 }
 
 .box-produtor-monitoramento {
